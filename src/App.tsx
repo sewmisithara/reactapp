@@ -1,26 +1,25 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import {brotliCompress} from "zlib";
+import {findAllByDisplayValue} from "@testing-library/react";
+
+import MainContent from "./view/common/mainContent/MainContent";
+import Navbar from "./view/common/navbar/navbar";
+import Footer from "./view/common/footer/Footer";
+// @ts-ignore
+import { BrowserRouter } from 'react-router-dom';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <BrowserRouter>
+          <Navbar />
+          <MainContent />
+          <Footer/>
+      </BrowserRouter>
   );
+
 }
 
 export default App;
